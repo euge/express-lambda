@@ -91,8 +91,17 @@ module.exports = function(req, res) {
 ## Deploy
 ```
 lambda-express deploy app.js
-Route graph here
-```
+Deployed!
+┌─────────┬──────────────────────────────────────────────────────────────────┬─────────────────────────────────┐
+│ Methods │ Path                                                             │ Lambda                          │
+├─────────┼──────────────────────────────────────────────────────────────────┼─────────────────────────────────┤
+│ GET     │ https://dlqz8q...us-east-1.amazonaws.com/production/widgets      │ index_widgets-7bd849-production │
+├─────────┼──────────────────────────────────────────────────────────────────┼─────────────────────────────────┤
+│ DELETE  │ https://dlqz8q...us-east-1.amazonaws.com/production/widgets/{id} │ index_widgets-1a82a4-production │
+├─────────┼──────────────────────────────────────────────────────────────────┼─────────────────────────────────┤
+│ POST    │ https://dlqz8q...us-east-1.amazonaws.com/production/foo/bars     │ index_widgets-16864a-production │
+└─────────┴──────────────────────────────────────────────────────────────────┴─────────────────────────────────┘
+``....
 
 ## More tweaking
 If you wish to share a lambda function between multiple actions, you can simply define a single instance of it and use it like so.
@@ -128,6 +137,13 @@ var l = app.makeLambda({
   role_arn: "..."
 })
 ```
+
+## Development plan
+* Better error handling
+* Support custom response headers
+* Support HTML and form inputs
+* Individually configurable lambda settings
+* More HTTP codes
 
 
 ## More Docs coming soon!
