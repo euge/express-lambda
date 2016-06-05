@@ -1,0 +1,43 @@
+{
+  "name": "lambda-express",
+  "version": "0.0.1",
+  "description": "Make AWS lambda behave like an express app",
+  "main": "./dist/index.js",
+  "bin": {
+    "lambda-express": "./dist/bin/lambda-express.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel source --presets babel-preset-es2015 --out-dir dist"
+  },
+  "author": "Euge Gimelberg",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.0.0-rc.4",
+    "aws-sdk": "^2.3.10",
+    "cli-table": "^0.3.1",
+    "commander": "^2.9.0",
+    "debug": "^2.2.0",
+    "dotenv": "^2.0.0",
+    "node-lambda": "^0.8.1",
+    "shelljs": "^0.7.0",
+    "tmp": "0.0.28",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "engines": {
+    "node": ">= 0.12.3"
+  },
+  "keywords": [
+    "lambda-express",
+    "lambda",
+    "apigw",
+    "aws",
+    "express",
+    "api",
+    "gateway"
+  ]
+}
