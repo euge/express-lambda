@@ -101,12 +101,12 @@ Deployed!
 ├─────────┼──────────────────────────────────────────────────────────────────┼─────────────────────────────────┤
 │ POST    │ https://dlqz8q...us-east-1.amazonaws.com/production/foo/bars     │ index_widgets-16864a-production │
 └─────────┴──────────────────────────────────────────────────────────────────┴─────────────────────────────────┘
-``....
+```
 
 ## More tweaking
 If you wish to share a lambda function between multiple actions, you can simply define a single instance of it and use it like so.
 
-Note that in the example below, you will need to inspect the path/method/etc in the "index_and_delete_widgets.js" handler file to determine if you are deleting or displaying all wedgets.
+Note that in the example below, you will need to inspect the path/method/etc in the "index_and_delete_widgets.js" handler file to determine if you are deleting or displaying all widgets.
 ```
 // app.js
 module.exports = function(app) {
