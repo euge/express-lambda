@@ -1,4 +1,4 @@
-# lambda-express
+# express-lambda
 Make AWS lambda behave like an express app
 
 This project is active development and is subject to...development.
@@ -14,18 +14,18 @@ Develop like you would an express.js app, but run on AWS's Lambda platform witho
 
 ## Installation
 ```
-npm install lambda-express -g
+npm install express-lambda -g
 ```
 
 ## Usage
 ```
 mkdir myapp
 cd myapp
-lambda-express init
+express-lambda init
 ```
 
 ## Configure
-Set your environment variables in the .env file created. Make sure you specify the AWS_ROLE_ARN that you want the lambda functions to use. Currently only 1 role is supported per lambda-express project, but this will be configurable on a per lambda basis in the future.
+Set your environment variables in the .env file created. Make sure you specify the AWS_ROLE_ARN that you want the lambda functions to use. Currently only 1 role is supported per express-lambda project, but this will be configurable on a per lambda basis in the future.
 
 Also, please be sure that your AWS credentials are correctly configured. See for more info: http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-files
 
@@ -90,7 +90,7 @@ module.exports = function(req, res) {
 
 ## Deploy
 ```
-lambda-express deploy app.js
+express-lambda deploy app.js
 Deployed!
 ┌─────────┬──────────────────────────────────────────────────────────────────┬─────────────────────────────────┐
 │ Methods │ Path                                                             │ Lambda                          │
@@ -126,7 +126,7 @@ module.exports = function(app) {
 ## Limitations
 * Right now, we only are supporting getting JSON requests in and JSON responses out. HTML output and form based inputs will be implemented soon.
 * No support for dynamic response headers - due to how the API Gateway works, it is not possible to respond with arbitrary response headers. Response headers must be declared up front. - This is also not yet implemented.
-* lambda-express will build from scratch a new API Gateway and associated lambda functions. It will not reuse existing ones. This will be done in the future.
+* express-lambda will build from scratch a new API Gateway and associated lambda functions. It will not reuse existing ones. This will be done in the future.
 * Not every response code is implemented right now. HTTP codes 200, 201, 301, 302, and 404 are the only ones supported.
 * Limited configurability of lambda parameters. In the future, we plan on supporting configuration of timeout, memory, etc on a per lambda basis.
 * The interface will look something like
