@@ -144,6 +144,7 @@ var l = app.makeLambda({
 * Support HTML and form inputs
 * Individually configurable lambda settings
 * More HTTP codes
+* Support for more of the express.js interface
 
 
 ## More Docs coming soon!
