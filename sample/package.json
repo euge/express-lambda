@@ -1,5 +1,5 @@
 {
   "name": "myapp",
   "version": "1.0.0",
-  "description": "My lambda-express application"
+  "description": "My express-lambda application"
 }

@@ -14,16 +14,16 @@ program
 
 program
   .command("init")
-  .description("Initializes a new lambda-express project")
+  .description("Initializes a new express-lambda project")
   .action(function() {
     console.log("Initializing project...")
     var samplePath = path.resolve(__dirname, "../../sample");
     var version =  require("../../package.json").version;
     shell.exec(`cp -r "${samplePath}/." "${process.cwd()}"`);
-    shell.exec(`npm install lambda-express@${version} --save`, { silent: true });
+    shell.exec(`npm install express-lambda@${version} --save`, { silent: true });
     console.log("Project initialized.");
     console.log("Please specify the AWS Role ARN in the .env file");
-    console.log("Run 'lambda-express deploy app.js' to deploy!");
+    console.log("Run 'express-lambda deploy app.js' to deploy!");
   });
 
 program.parse(process.argv);

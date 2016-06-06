@@ -1,10 +1,10 @@
 {
-  "name": "lambda-express",
+  "name": "express-lambda",
   "version": "0.0.1",
   "description": "Make AWS lambda behave like an express app",
   "main": "./dist/index.js",
   "bin": {
-    "lambda-express": "./dist/bin/lambda-express.js"
+    "express-lambda": "./dist/bin/express-lambda.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -32,7 +32,7 @@
     "node": ">= 0.12.3"
   },
   "keywords": [
-    "lambda-express",
+    "express-lambda",
     "lambda",
     "apigw",
     "aws",

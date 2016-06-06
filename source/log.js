@@ -2,10 +2,10 @@ const util = require("util");
 const debug = require("debug");
 
 // ensure we are logging basic info
-debug.enable("lambda-express:info");
-debug.enable("lambda-express:error");
+debug.enable("express-lambda:info");
+debug.enable("express-lambda:error");
 
-const make = name => debug("lambda-express:" + name);
+const make = name => debug("express-lambda:" + name);
 
 module.exports = {
   make,

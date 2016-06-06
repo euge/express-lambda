@@ -55,7 +55,7 @@ class Lambda {
 
   _writeWrapper() {
     var wrapper = `
-      var utils = require("lambda-express/dist/utils");
+      var utils = require("express-lambda/dist/utils");
 
       exports.handler = function(event, context) {
         var req = utils.makeRequest(event, context);
