@@ -51,7 +51,7 @@ module.exports = function(app) {
 // index_widgets.js
 module.exports = function(req, res) {
   if (req.query.filter === "all") {
-    res.json({
+    res.send({
       widgets: ["here", "they", "are"]
     });
   } else if (req.query.filter === "some") {
