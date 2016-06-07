@@ -1,6 +1,6 @@
 {
   "name": "express-lambda",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make AWS lambda behave like an express app",
   "main": "./dist/index.js",
   "bin": {
