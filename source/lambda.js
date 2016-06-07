@@ -61,7 +61,6 @@ class Lambda {
         var req = utils.makeRequest(event, context);
         var res = utils.makeResponse(event, context, req);
         require("./${path.basename(this.config.src)}")(req, res);
-        res.respondToLambda(context);
       };`;
 
      fs.writeFileSync(`${this._folder}/index.js`, wrapper);

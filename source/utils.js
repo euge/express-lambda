@@ -70,7 +70,7 @@ module.exports = {
   },
 
   makeResponse: (event, context, req) => {
-    return new Response(context, req);
+    return new Response(req, context);
   }
 }
 
