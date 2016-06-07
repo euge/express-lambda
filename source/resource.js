@@ -1,5 +1,3 @@
-"use strict";
-
 const async = require("async");
 const ApiGatewayResource = require("./api_gateway_resource");
 const Node = require("./node");

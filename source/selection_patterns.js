@@ -1,5 +1,3 @@
-"use strict";
-
 const padding = {
   "201": "",
   "301": " ",

@@ -1,16 +1,11 @@
-"use strict";
-
 const selectionPatterns = require("./selection_patterns");
 
 class Response {
-  constructor() {
-    this.statusCode = "200";
+  constructor(request, context) {
+    this.request = request;
+    this.status("200");
     this.data = null;
-  }
-
-  json(data) {
-    this.data = data;
-    return this;
+    this.context = context;
   }
 
   status(statusCode) {
@@ -23,25 +18,28 @@ class Response {
     return this;
   }
 
-  send(data) {
-    if (typeof data === "object") {
-      this.json(data);
+  send(...args) {
+    if (args.length === 2) {
+      this.status(args[0]);
+      this.data = args[1];
     } else {
-      this.data = data;
+      this.data = args[0];
     }
+    this.end();
   }
 
   redirect(code, location) {
     if (typeof code === "number" || typeof code === "string") {
-      this.statusCode = code.toString();
+      this.status(code);
       this.location(location);
     } else {
-      this.statusCode = "302";
+      this.status("302");
       this.location(code);
     }
+    this.end();
   }
 
-  respondToLambda(context) {
+  end() {
     var method = (this.statusCode === "200" ? "succeed" : "fail");
     var response;
     if (["201", "301", "302"].indexOf(this.statusCode) !== -1) {
@@ -52,7 +50,7 @@ class Response {
     } else {
       response = [ "STATUS" + this.statusCode, JSON.stringify(this.data) ].join(selectionPatterns.responseDelimeter);
     }
-    context[method](response);
+    this.context[method](response);
   }
 }
 
@@ -71,8 +69,8 @@ module.exports = {
     return req;
   },
 
-  makeResponse: (event, context) => {
-    return new Response();
+  makeResponse: (event, context, req) => {
+    return new Response(context, req);
   }
 }
 

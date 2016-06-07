@@ -59,7 +59,7 @@ class Lambda {
 
       exports.handler = function(event, context) {
         var req = utils.makeRequest(event, context);
-        var res = utils.makeResponse(event, context);
+        var res = utils.makeResponse(event, context, req);
         require("./${path.basename(this.config.src)}")(req, res);
         res.respondToLambda(context);
       };`;
