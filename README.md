@@ -1,5 +1,5 @@
 # express-lambda
-Make AWS lambda behave like an express app
+Make AWS lambda and API Gateway behave like an express app
 
 This project is active development and is subject to...development.
 
